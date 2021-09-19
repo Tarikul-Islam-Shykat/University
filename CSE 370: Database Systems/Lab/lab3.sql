@@ -142,3 +142,38 @@ MariaDB [lab]> SELECT MIN(submission_date) AS lowest_date FROM result;
 | 2018-07-18  |
 +-------------+
 
+--> GROUP 
+
+SELECT major FROM result GROUP BY major;
++-------+
+| major |
++-------+
+| bba   |
+| cse   |
+| llb   |
++-------+
+select major, COUNT(*) FROM result GROUP BY major;
++-------+----------+
+| major | COUNT(*) |
++-------+----------+
+| bba   |        1 |
+| cse   |        2 |
+| llb   |        2 |
++-------+----------+
+SELECT major, COUNT(*) FROM result WHERE days_present < 200 GROUP BY major;
++-------+----------+
+| major | COUNT(*) |
++-------+----------+
+| bba   |        1 |
+| cse   |        2 |
+| llb   |        2 |
++-------+----------+
+SELECT major, COUNT(*) FROM result GROUP BY major HAVING COUNT(*) > 1;
++-------+----------+
+| major | COUNT(*) |
++-------+----------+
+| cse   |        2 |
+| llb   |        2 |
++-------+----------+
+
+--> After GROUP BY you cant use where clause
