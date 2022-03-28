@@ -1,0 +1,135 @@
+1.a
+[Create 4 files named yourID_1.txt, yourID_2.txt, yourID_3, yourID_4.txt and 2 directories
+named YourName1, YourName2.]
+~/lab1$ touch 19301008_1.txt
+~/lab1$ touch 19301008_2.txt
+~/lab1$ touch 19301008_3.txt
+~/lab1$ touch 19301008_4.txt
+~/lab1$ mkdir tarikul
+~/lab1$ mkdir shykat
+
+[Move yourID_1.txt, yourID_2.txt, yourID_3.txt in
+YourName1 directory.]
+~/lab1$ mv 19301008_1.txt tarikul
+~/lab1$ mv 19301008_2.txt tarikul
+~/lab1$ mv 19301008_3.txt tarikul
+
+[Copy yourID_1.txt, yourID_2.txt YourName2 directory.]
+~/lab1$ pwd
+/home/runner/lab1
+~/lab1$ cd tarikul/
+~/lab1/tarikul$ pwd
+/home/runner/lab1/tarikul
+~/lab1/tarikul$ cd ..
+~/lab1$ cd shykat
+~/lab1/shykat$ pwd
+/home/runner/lab1/shykat
+~/lab1/shykat$ cd ..
+~/lab1$ cp /home/runner/lab1/tarikul/{19301008_1.txt,19301008_2.txt} /home/runner/lab1/shykat
+
+[Create another directory YourName3.]
+~/lab1$ mkdir shykat2
+
+[copy the YourName1 directory along with contents to the YourName3 directory.]
+~/lab1$ cp -R /home/runner/lab1/tarikul/. /home/runner/lab1/shykat2/
+
+[Now go into the YourName3 directory and check the permissions of the files/directory in there and change the permissions for both group and others to only read-execute for all the files.]
+~/lab1$ cd shykat2
+~/lab1/shykat2$ chmod -w  19301008_1.txt
+~/lab1/shykat2$ chmod +x  19301008_1.txt
+~/lab1/shykat2$ ls -l 19301008_1.txt
+-r-xr-xr-x 1 runner runner 0 Mar 19 14:38 19301008_1.txt
+
+~/lab1/shykat2$ chmod -w  19301008_2.txt
+~/lab1/shykat2$ chmod +x  19301008_2.txt
+~/lab1/shykat2$ ls -l 19301008_2.txt
+-r-xr-xr-x 1 runner runner 0 Mar 19 14:38 19301008_2.txt
+
+~/lab1/shykat2$ chmod -w  19301008_3.txt
+~/lab1/shykat2$ chmod +x  19301008_3.txt
+~/lab1/shykat2$ ls -l 19301008_3.txt
+-r-xr-xr-x 1 runner runner 0 Mar 19 14:38 19301008_3.txt
+
+[Now go back one directory and print allthe directories and files in the current working directory.]
+~/lab1$ ls
+19301008_4.txt  main.sh  replit.nix  shykat  shykat2  tarikul
+
+[Finally, move the YourName3 folder to the root directory and delete the rest of the files and folders in the current working directory.]
+~/lab1$ mv shykat2 /home/runner
+~/lab1$ rm /home/runner/lab1/* [remove files]
+~/lab1$ rm -R -- */ [remove directory]
+
+
+1.b
+~/Lab1$ touch cse321.txt
+~/Lab1$ cat -> cse321.txt
+cse 321
+cse 340
+cse 220
+cse 111 
+cse 110
+alone in cse
+cse courses
+~/Lab1$ grep -c 'cse' cse321.txt
+7
+
+
+1.c
+~/Lab1$ ls -tarikul
+total 16
+257 drwxr-xr-x 1 runner runner  12 Oct 12 20:07 .cache
+262 -rw-r--r-- 1 runner runner  62 Nov 11 22:09 replit.nix
+268 -rw-r--r-- 1 runner runner   0 Mar 19 05:51 19301008_4.txt
+  2 drwxrwxrwx 1 runner runner  52 Mar 19 06:06 ..
+263 -rw-r--r-- 1 runner runner  49 Mar 19 06:06 .replit
+265 drwxr-xr-x 1 runner runner  84 Mar 19 06:06 tarikul
+269 drwxr-xr-x 1 runner runner   0 Mar 19 06:06 shykat
+261 -rw-r--r-- 1 runner runner  16 Mar 19 06:06 main.sh
+270 -rw-r--r-- 1 runner runner   0 Mar 19 06:31 t.txt
+271 drwxr-xr-x 1 runner runner   0 Mar 19 06:35 shykat2
+256 drwxr-xr-x 1 runner runner 158 Mar 19 06:41 .
+272 -rw-r--r-- 1 runner runner  52 Mar 19 06:45 cse321.txt
+
+
+1.d 
+~/Lab1$ touch a.txt
+~/Lab1$ cat -> a.txt
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+p
+q
+r
+s
+t
+~/Lab1$ sed -n '5,17p' a.txt
+line 5
+line 6
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
